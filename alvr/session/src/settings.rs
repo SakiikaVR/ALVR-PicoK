@@ -1634,10 +1634,10 @@ pub fn session_settings_default() -> SettingsDefault {
         variant: FrameSizeDefaultVariant::Absolute,
         Scale: 1.0,
         Absolute: FrameSizeAbsoluteDefault {
-            width: 4320,
+            width: 5184,
             height: OptionalDefault {
                 set: true,
-                content: 2160,
+                content: 2592,
             },
         },
     };

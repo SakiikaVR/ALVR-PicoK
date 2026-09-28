@@ -6,7 +6,7 @@ on:
       release_tag:
         description: Release tag
         required: true
-        default: v21.0.0-picok.2
+        default: v21.0.0-picok.3
         type: string
 
 permissions:
