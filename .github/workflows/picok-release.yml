@@ -6,7 +6,7 @@ on:
       release_tag:
         description: Release tag
         required: true
-        default: v21.0.0-dev14-picok.1
+        default: v21.0.0-picok.1
         type: string
 
 permissions:
@@ -68,10 +68,10 @@ jobs:
           tag_name: ${{ inputs.release_tag }}
           name: ALVR PicoK ${{ inputs.release_tag }}
           body: |
-            PicoK custom build based on ALVR commit `dc84d6835d4125226f9698f1f052629852d86e31`.
+            Official PicoK release based on ALVR commit `dc84d6835d4125226f9698f1f052629852d86e31`.
 
-            The Windows streamer contains PicoK's session defaults. The Android client is the matching upstream build from the same ALVR source commit; no client-side changes were needed.
+            The Windows streamer contains PicoK's session defaults, including microphone enabled by default. The Android client is the matching upstream build from the same ALVR source commit; no client-side changes were needed.
           draft: false
-          prerelease: true
+          prerelease: false
           target_commitish: ${{ github.sha }}
           files: artifacts/**

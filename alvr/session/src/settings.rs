@@ -1947,7 +1947,7 @@ pub fn session_settings_default() -> SettingsDefault {
                 },
             },
             microphone: SwitchDefault {
-                enabled: cfg!(target_os = "linux"),
+                enabled: true,
                 content: MicrophoneConfigDefault {
                     gui_collapsed: true,
                     devices: MicrophoneDevicesConfigDefault {
