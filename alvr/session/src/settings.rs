@@ -1634,10 +1634,10 @@ pub fn session_settings_default() -> SettingsDefault {
         variant: FrameSizeDefaultVariant::Absolute,
         Scale: 1.0,
         Absolute: FrameSizeAbsoluteDefault {
-            width: 2144,
+            width: 4320,
             height: OptionalDefault {
-                set: false,
-                content: 1072,
+                set: true,
+                content: 2160,
             },
         },
     };
@@ -1734,7 +1734,7 @@ pub fn session_settings_default() -> SettingsDefault {
                         saturation_multiplier: 0.95,
                         max_throughput_mbps: SwitchDefault {
                             enabled: true,
-                            content: 100,
+                            content: 150,
                         },
                         min_throughput_mbps: SwitchDefault {
                             enabled: false,
