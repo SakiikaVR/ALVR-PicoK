@@ -7,6 +7,8 @@
 Stream VR games from your PC to your headset over Wi-Fi.  
 This is a fork of [ALVR](https://github.com/polygraphene/ALVR).
 
+This fork is based on the source commit used by ALVR nightly `v21.0.0-dev14+nightly.2026.09.28` (`dc84d6835d4125226f9698f1f052629852d86e31`). New sessions use HEVC, adaptive bitrate up to 100 Mbps, 90 Hz, enabled color correction (saturation `0.5`), SteamVR direct launch, and enabled body tracking with Pico object tracking selected. The full-body preference is enabled for runtimes that expose that mode. Pico tracker pairing and runtime support are still required. These changes affect new sessions; existing saved sessions retain their settings.
+
 ### Direct download (latest version):
 ### [Windows Launcher](https://github.com/alvr-org/ALVR/releases/latest/download/alvr_launcher_windows.zip) | [Linux Launcher](https://github.com/alvr-org/ALVR/releases/latest/download/alvr_launcher_linux.tar.gz)
 

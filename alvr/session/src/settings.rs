@@ -1721,7 +1721,7 @@ pub fn session_settings_default() -> SettingsDefault {
             adapter_index: 0,
             transcoding_view_resolution: view_resolution.clone(),
             emulated_headset_view_resolution: view_resolution,
-            preferred_fps: 72.,
+            preferred_fps: 90.,
             max_buffering_frames: 2.0,
             buffering_history_weight: 0.90,
             enforce_server_frame_pacing: true,
@@ -1733,7 +1733,7 @@ pub fn session_settings_default() -> SettingsDefault {
                         gui_collapsed: true,
                         saturation_multiplier: 0.95,
                         max_throughput_mbps: SwitchDefault {
-                            enabled: false,
+                            enabled: true,
                             content: 100,
                         },
                         min_throughput_mbps: SwitchDefault {
@@ -1760,7 +1760,7 @@ pub fn session_settings_default() -> SettingsDefault {
                             },
                         },
                     },
-                    variant: BitrateModeDefaultVariant::ConstantMbps,
+                    variant: BitrateModeDefaultVariant::Adaptive,
                 },
                 adapt_to_framerate: SwitchDefault {
                     enabled: false,
@@ -1772,7 +1772,7 @@ pub fn session_settings_default() -> SettingsDefault {
                 image_corruption_fix: false,
             },
             preferred_codec: CodecTypeDefault {
-                variant: CodecTypeDefaultVariant::H264,
+                variant: CodecTypeDefaultVariant::Hevc,
             },
             encoder_config: EncoderConfigDefault {
                 gui_collapsed: true,
@@ -1919,7 +1919,7 @@ pub fn session_settings_default() -> SettingsDefault {
             },
             force_software_decoder: false,
             color_correction: SwitchDefault {
-                enabled: false,
+                enabled: true,
                 content: ColorCorrectionConfigDefault {
                     brightness: 0.,
                     contrast: 0.,
@@ -2010,7 +2010,7 @@ pub fn session_settings_default() -> SettingsDefault {
                 },
             },
             body_tracking: SwitchDefault {
-                enabled: false,
+                enabled: true,
                 content: BodyTrackingConfigDefault {
                     gui_collapsed: true,
                     sources: BodyTrackingSourcesConfigDefault {
@@ -2023,7 +2023,7 @@ pub fn session_settings_default() -> SettingsDefault {
                                 high_accuracy: true,
                                 prompt_calibration_on_start: true,
                             },
-                            variant: BodyTrackingBDConfigDefaultVariant::BodyTracking,
+                            variant: BodyTrackingBDConfigDefaultVariant::ObjectTracking,
                         },
                     },
                     sink: BodyTrackingSinkConfigDefault {
@@ -2257,7 +2257,7 @@ pub fn session_settings_default() -> SettingsDefault {
             },
             steamvr_launcher: SteamvrLauncherDefault {
                 open_close_steamvr_with_dashboard: false,
-                direct_launch: false,
+                direct_launch: true,
             },
             capture: CaptureConfigDefault {
                 startup_video_recording: false,
