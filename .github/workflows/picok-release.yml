@@ -1,0 +1,77 @@
+name: Publish ALVR PicoK release
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: Release tag
+        required: true
+        default: v21.0.0-dev14-picok.1
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  build_windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ github.sha }}
+          submodules: true
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: crazy-max/ghaction-chocolatey@v4
+        with:
+          args: install zip unzip pkgconfiglite
+
+      - name: Build streamer
+        run: cargo xtask package-streamer --gpl --ci
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: windows-packages
+          path: ./build/alvr_streamer_windows.zip
+          if-no-files-found: error
+
+  android_client:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download matching ALVR client
+        shell: bash
+        run: |
+          mkdir -p artifacts
+          curl --fail --location \
+            'https://github.com/alvr-org/ALVR-nightly/releases/download/v21.0.0-dev14%2Bnightly.2026.09.28/alvr_client_android.apk' \
+            --output artifacts/alvr_client_android.apk
+          echo 'ba8a948dd7a0988f6f289dfd6c81aa6f793b2c6cbba0bdbeb338189cb158012a  artifacts/alvr_client_android.apk' | sha256sum --check
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: android-client
+          path: artifacts/alvr_client_android.apk
+          if-no-files-found: error
+
+  publish:
+    runs-on: ubuntu-latest
+    needs: [build_windows, android_client]
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          merge-multiple: true
+          path: artifacts
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ inputs.release_tag }}
+          name: ALVR PicoK ${{ inputs.release_tag }}
+          body: |
+            PicoK custom build based on ALVR commit `dc84d6835d4125226f9698f1f052629852d86e31`.
+
+            The Windows streamer contains PicoK's session defaults. The Android client is the matching upstream build from the same ALVR source commit; no client-side changes were needed.
+          draft: false
+          prerelease: true
+          target_commitish: ${{ github.sha }}
+          files: artifacts/**
