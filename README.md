@@ -21,5 +21,4 @@
 
 Pico用APKとWindows用Streamer ZIPを、それぞれ上のボタンからダウンロードできます。
 
--   See the [Troubleshooting](https://github.com/alvr-org/ALVR/wiki/Troubleshooting) page, and [Linux Troubleshooting](https://github.com/alvr-org/ALVR/wiki/Linux-Troubleshooting) if applicable.
--   Configuration recommendations and additional information can be found [here](https://github.com/alvr-org/ALVR/wiki/Information-and-Recommendations).
+## 使い方
