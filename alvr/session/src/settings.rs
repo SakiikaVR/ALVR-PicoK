@@ -1923,7 +1923,7 @@ pub fn session_settings_default() -> SettingsDefault {
                 content: ColorCorrectionConfigDefault {
                     brightness: 0.,
                     contrast: 0.,
-                    saturation: 0.5,
+                    saturation: 0.0,
                     gamma: 1.04,
                     sharpening: 0.5,
                 },
