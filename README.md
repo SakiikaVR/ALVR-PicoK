@@ -8,6 +8,7 @@
 # ALVR-PicoK
 ###  -Pico4Ultra最適化PCVR接続ツール-
   <a href="https://github.com/SakiikaVR/ALVR-PicoK/releases/latest"><img src="https://img.shields.io/github/v/release/SakiikaVR/ALVR-PicoK?style=for-the-badge&label=VERSION" alt="最新リリース"></a>
+  ※ALVRでPico4Ultraの機能が発揮できるよう設定を最適化したALVR非公式フォークです。
 -   PICOトラッカー、ハンドトラッキング対応
 -   高解像度設定
 -   マイク、出力遅延削減
