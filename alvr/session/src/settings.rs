@@ -1924,7 +1924,7 @@ pub fn session_settings_default() -> SettingsDefault {
                     brightness: 0.,
                     contrast: 0.,
                     saturation: 0.5,
-                    gamma: 1.,
+                    gamma: 1.04,
                     sharpening: 0.5,
                 },
             },
