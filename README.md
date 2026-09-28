@@ -1,6 +1,6 @@
 <p align="center"> <img width="200" src="resources/ALVR-Grey.svg"/> </p>
 
-# ALVR-PicoK
+# ALVR-PicoK -Pico4Ultra最適化PCVR接続ツール-
 
 \**** Please check the wiki for detailed compatibility information.
 
