@@ -1,4 +1,4 @@
-<p align="center"> <img width="500" src="resources/ALVR-Grey.svg"/> </p>
+<p align="center"> <img width="200" src="resources/ALVR-Grey.svg"/> </p>
 
 # ALVR - Air Light VR
 
